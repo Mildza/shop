@@ -2,16 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-const config = {
-  apiKey: "AIzaSyD9rVPxNmGPn8MadWrXj9Y681oLPTnDZsQ",
-  authDomain: "shop-82b8b.firebaseapp.com",
-  databaseURL: "https://shop-82b8b.firebaseio.com",
-  projectId: "shop-82b8b",
-  storageBucket: "shop-82b8b.appspot.com",
-  messagingSenderId: "1005492674564",
-  appId: "1:1005492674564:web:4dec90ab47417d625ed551",
-  measurementId: "G-F4ZG5RVC3F"
-};
+import config from "./config";
 
 firebase.initializeApp(config);
 
