@@ -8,6 +8,7 @@ import LogIn from "./pages/login/LogIn";
 
 import { auth, createUserProfile } from "./firebase/firabase-util";
 import UserContext from "./shared/context/UserContext";
+import CartContext from "./shared/context/CartContext";
 
 import { createBrowserHistory } from "history";
 import "./App.scss";
@@ -18,9 +19,17 @@ const history = createBrowserHistory({
 
 function App() {
   const [user, setUser] = useState();
+  const [cart, setCart] = useState([]);
 
   const logHandler = () => {
     setUser(null);
+  };
+
+  const addItem = item => {
+    setCart(cart.concat(item));
+  };
+  const removeItem = item => {
+    setCart(cart.filter(el => el !== item));
   };
 
   useEffect(() => {
@@ -45,22 +54,24 @@ function App() {
     <div className="app">
       <Router history={history}>
         <UserContext.Provider value={{ user, logHandler }}>
-          <Header />
-          <Route exact path="/">
-            <Homepage />
-          </Route>
-          <Route path="/home">
-            <Homepage />
-          </Route>
-          <Route path="/shop/:id">
-            <Shop />
-          </Route>
-          <Route exact path="/shop">
-            <Shop />
-          </Route>
-          <Route path="/LogIn">
-            <LogIn />
-          </Route>
+          <CartContext.Provider value={{ cart, addItem, removeItem }}>
+            <Header />
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route path="/home">
+              <Homepage />
+            </Route>
+            <Route path="/shop/:id">
+              <Shop />
+            </Route>
+            <Route exact path="/shop">
+              <Shop />
+            </Route>
+            <Route path="/LogIn">
+              <LogIn />
+            </Route>
+          </CartContext.Provider>
         </UserContext.Provider>
       </Router>
     </div>

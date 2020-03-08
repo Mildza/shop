@@ -7,8 +7,16 @@
   height: 54px;
   margin-top: 30px;
 
-  .links a {
-    padding: 0 15px;
+  .right-side {
+    display: flex;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    a {
+      padding: 0 15px;
+    }
   }
 
   .log-out {
@@ -19,16 +27,18 @@
       position: relative;
       flex-direction: column;
       font-size: 17px;
+      left: 15px;
       img {
-        top: 15px;
-        width: 54px;
+        top: 0px;
+
+        width: 48px;
         cursor: pointer;
         position: relative;
         border-radius: 50%;
       }
       .log-button {
         position: absolute;
-        top: 66px;
+        top: 45px;
         font-family: inherit;
         button {
           border: 1px solid black;
