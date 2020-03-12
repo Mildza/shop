@@ -1,15 +1,18 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 
-import "./CardDropdown.scss";
 import Button from "./../../shared/button/Button";
 import CartContext from "./../../shared/context/CartContext";
+import CartItem from "../cart-item/CartItem";
+import "./CardDropdown.scss";
 
 const CardDropdown = () => {
-  const { cart, removeItem } = useContext(CartContext);
-  console.log(cart);
+  const { cart, removeItem, cartVisible } = useContext(CartContext);
+  const history = useHistory();
 
-  const removeItemFromCart = item => {
-    removeItem(item);
+  const checkoutHandler = () => {
+    history.push("/checkout");
+    cartVisible();
   };
 
   return (
@@ -17,19 +20,19 @@ const CardDropdown = () => {
       <div className="card-items">
         {cart.length ? (
           cart.map(el => (
-            <h4
+            <CartItem
+              key={el.id}
+              item={el}
               onClick={() => {
-                removeItemFromCart(el);
+                removeItem(el);
               }}
-            >
-              {el.name}
-            </h4>
+            ></CartItem>
           ))
         ) : (
-          <h4>No items in cart</h4>
+          <div className="empty-message">No items in cart</div>
         )}
       </div>
-      <Button>Go to checkout</Button>
+      <Button onClick={checkoutHandler}>Go to checkout</Button>
     </div>
   );
 };

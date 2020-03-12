@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Collection.scss";
 
@@ -22,13 +23,15 @@ const Collection = ({ items, title, routeName }) => {
   return (
     <div className="collection">
       {id === routeName ? <div id={routeName}></div> : null}
-      <h1>{title.toUpperCase()}</h1>
+      <Link to={`/shop/${routeName}/all`}>
+        <h1>{title.toUpperCase()} ...</h1>
+      </Link>
 
       <div className="collection-row">
         {items
           .filter((item, i) => i < 4)
-          .map(({ id, ...rest }) => (
-            <ItemCollections key={id} {...rest} />
+          .map(item => (
+            <ItemCollections key={item.id} item={item} />
           ))}
       </div>
     </div>

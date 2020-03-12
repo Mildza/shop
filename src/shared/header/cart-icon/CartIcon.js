@@ -6,13 +6,12 @@ import "./CartIcon.scss";
 import CartContext from "./../../context/CartContext";
 
 const CartIcon = props => {
-  const { cart } = useContext(CartContext);
-  console.log(cart);
+  const { counter } = useContext(CartContext);
 
   return (
     <div className="cart-icon" onClick={props.onClick}>
       <img src={bag} className="shopping-icon" alt="Logo" />
-      <span className="item-count">{cart.length}</span>
+      <span className="item-count">{counter}</span>
     </div>
   );
 };

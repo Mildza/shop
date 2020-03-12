@@ -3,7 +3,6 @@ const DATA = [
     id: 1,
     title: "Hats",
     routeName: "hats",
-    imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
     items: [
       {
         id: 1,
@@ -65,7 +64,6 @@ const DATA = [
     id: 2,
     title: "Sneakers",
     routeName: "sneakers",
-    imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
     items: [
       {
         id: 10,
@@ -121,7 +119,6 @@ const DATA = [
     id: 3,
     title: "Jackets",
     routeName: "jackets",
-    imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
     items: [
       {
         id: 18,
@@ -159,7 +156,6 @@ const DATA = [
     id: 4,
     title: "Womens",
     routeName: "womens",
-    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
     items: [
       {
         id: 23,
@@ -209,7 +205,6 @@ const DATA = [
     id: 5,
     title: "Mens",
     routeName: "mens",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
     items: [
       {
         id: 30,

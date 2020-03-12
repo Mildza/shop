@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import UserContext from "./../context/UserContext";
+import CartContext from "./../context/CartContext";
 import { auth } from "./../../firebase/firabase-util";
 
 import "./Header.scss";
@@ -11,7 +12,7 @@ import CardDropdown from "./../../components/card-dropdown/CardDropdown";
 const IMAGE_PATH = process.env.PUBLIC_URL + "assets/images/";
 
 const Header = props => {
-  const [openShop, setOpenShop] = useState(false);
+  const { openCart, cartVisible } = useContext(CartContext);
   const { user, logHandler } = useContext(UserContext);
   const [toggle, setToggle] = useState(false);
 
@@ -20,7 +21,7 @@ const Header = props => {
   };
 
   const toggleCart = () => {
-    setOpenShop(!openShop);
+    cartVisible();
   };
 
   const logOut = () => {
@@ -68,7 +69,7 @@ const Header = props => {
           )}
         </div>
       </div>
-      {openShop && <CardDropdown />}
+      {openCart && <CardDropdown />}
     </nav>
   );
 };

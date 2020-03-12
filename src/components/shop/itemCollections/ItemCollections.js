@@ -4,19 +4,22 @@ import "./ItemCollections.scss";
 import Button from "./../../../shared/button/Button";
 import CartContext from "./../../../shared/context/CartContext";
 
-const ItemCollections = ({ name, price, imageUrl }) => {
+const ItemCollections = ({ item }) => {
   const { addItem } = useContext(CartContext);
 
   const addItemToCart = () => {
-    addItem({ name: name });
+    addItem(item);
   };
 
   return (
     <div className="item-collection">
-      <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
+      <div
+        className="image"
+        style={{ backgroundImage: `url(${item.imageUrl})` }}
+      />
       <div className="item-footer">
-        <span className="name">{name}</span>
-        <span className="price">${price}</span>
+        <span className="name">{item.name}</span>
+        <span className="price">&euro;{item.price}</span>
       </div>
       <Button inverted onClick={addItemToCart}>
         Add to Cart
