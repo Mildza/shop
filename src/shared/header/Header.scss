@@ -1,12 +1,17 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+
   font-size: 1.6em;
   padding: 20px 0;
   height: 54px;
   border-bottom: 1px solid grey;
   margin-top: 30px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
 
   .right-side {
     display: flex;
