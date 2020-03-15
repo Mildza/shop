@@ -1,6 +1,20 @@
 .collection-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .collection-row {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collection-row {
+    grid-template-columns: 1fr;
+  }
 }

@@ -9,7 +9,7 @@ import "./Header.scss";
 import CartIcon from "./cart-icon/CartIcon";
 import CardDropdown from "./../../components/card-dropdown/CardDropdown";
 
-const IMAGE_PATH = process.env.PUBLIC_URL + "assets/images/";
+const IMAGE_PATH = process.env.PUBLIC_URL + "/assets/images/";
 
 const Header = props => {
   const { openCart, cartVisible } = useContext(CartContext);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useParams, Link } from "react-router-dom";
 
@@ -14,9 +14,21 @@ const scrollToTop = () => {
     behavior: "smooth"
   });
 };
+const scrollToBottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    left: 0,
+    behavior: "smooth"
+  });
+};
 const CollectionPage = () => {
-  scrollToTop();
   const { id } = useParams();
+  useEffect(() => {
+    setTimeout(function() {
+      scrollToTop();
+    }, 700);
+    scrollToBottom();
+  }, [id]);
 
   const catalog = DATA.filter(el => el.routeName === id);
 

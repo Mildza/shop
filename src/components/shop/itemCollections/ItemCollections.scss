@@ -1,5 +1,5 @@
 .item-collection {
-  width: 24%;
+  width: 94%;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -38,4 +38,10 @@
   display: flex;
   justify-content: space-between;
   font-size: 1.4em;
+}
+
+@media (max-width: 1024px) {
+  .item-collection {
+    width: 100%;
+  }
 }
