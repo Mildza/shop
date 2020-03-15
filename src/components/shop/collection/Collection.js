@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./Collection.scss";
 
 import ItemCollections from "./../itemCollections/ItemCollections";
+import Category from "./../../homepage/category/Category";
 
 const scrollToCollection = id => {
   const collection = document.getElementById(id);
