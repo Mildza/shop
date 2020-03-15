@@ -16,10 +16,19 @@
       height: 100%;
     }
   }
-  .name,
-  .quantity,
+  .description {
+    width: 35%;
+  }
+  .quantity {
+    width: 22%;
+  }
   .price {
-    width: 23%;
+    width: 12%;
+  }
+  .remove {
+    width: 8%;
+    padding-left: 12px;
+    cursor: pointer;
   }
 
   .quantity {
@@ -30,10 +39,5 @@
     .value {
       margin: 0 10px;
     }
-  }
-
-  .remove-button {
-    padding-left: 12px;
-    cursor: pointer;
   }
 }

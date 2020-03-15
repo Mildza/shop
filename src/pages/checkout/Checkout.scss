@@ -15,11 +15,21 @@
 
     .header-block {
       text-transform: capitalize;
+    }
+    .product {
       width: 23%;
-
-      &:last-child {
-        width: 8%;
-      }
+    }
+    .description {
+      width: 35%;
+    }
+    .quantity {
+      width: 22%;
+    }
+    .price {
+      width: 12%;
+    }
+    .remove {
+      width: 8%;
     }
   }
 
@@ -27,5 +37,11 @@
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    width: 100%;
   }
 }

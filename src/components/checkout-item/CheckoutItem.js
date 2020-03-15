@@ -14,7 +14,7 @@ const CheckoutItem = ({ data }) => {
       <div className="image-container">
         <img src={imageUrl} alt="" />
       </div>
-      <span className="name">{name}</span>
+      <span className="description">{name}</span>
       <span className="quantity">
         <div className="arrow" onClick={() => decreaseQuantity(data)}>
           &#10094;
@@ -25,7 +25,7 @@ const CheckoutItem = ({ data }) => {
         </div>
       </span>
       <span className="price">&euro;{price}</span>
-      <div className="remove-button" onClick={() => removeItem(data)}>
+      <div className="remove" onClick={() => removeItem(data)}>
         &#10005;
       </div>
     </div>

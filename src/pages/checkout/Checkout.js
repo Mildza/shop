@@ -21,19 +21,19 @@ const Checkout = () => {
       {currentCart ? (
         <div className="checkout">
           <div className="checkout-header">
-            <div className="header-block">
+            <div className="header-block product">
               <span>product</span>
             </div>
-            <div className="header-block">
+            <div className="header-block description">
               <span>description</span>
             </div>
-            <div className="header-block">
+            <div className="header-block quantity">
               <span>qauntity</span>
             </div>
-            <div className="header-block">
+            <div className="header-block price">
               <span>price</span>
             </div>
-            <div className="header-block">
+            <div className="header-block remove">
               <span>remove</span>
             </div>
           </div>
