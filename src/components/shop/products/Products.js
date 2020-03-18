@@ -12,7 +12,7 @@ const Products = ({ item }) => {
   };
 
   return (
-    <div className="products-collection">
+    <div className="products">
       <div
         className="image"
         style={{ backgroundImage: `url(${item.imageUrl})` }}
