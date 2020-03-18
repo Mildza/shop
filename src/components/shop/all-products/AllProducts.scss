@@ -1,4 +1,4 @@
-.collection-row {
+.all-products-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
@@ -7,14 +7,14 @@
 }
 
 @media (max-width: 1024px) {
-  .collection-row {
+  .all-products-row {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .collection-row {
+  .all-products-row {
     grid-template-columns: 1fr;
   }
 }

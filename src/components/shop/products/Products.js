@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 
-import "./ItemCollections.scss";
-import Button from "./../../../shared/button/Button";
-import CartContext from "./../../../shared/context/CartContext";
+import "./Products.scss";
+import Button from "../../../shared/button/Button";
+import CartContext from "../../../shared/context/CartContext";
 
-const ItemCollections = ({ item }) => {
+const Products = ({ item }) => {
   const { addItem } = useContext(CartContext);
 
   const addItemToCart = () => {
@@ -12,7 +12,7 @@ const ItemCollections = ({ item }) => {
   };
 
   return (
-    <div className="item-collection">
+    <div className="products-collection">
       <div
         className="image"
         style={{ backgroundImage: `url(${item.imageUrl})` }}
@@ -28,4 +28,4 @@ const ItemCollections = ({ item }) => {
   );
 };
 
-export default ItemCollections;
+export default Products;

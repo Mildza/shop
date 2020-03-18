@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useParams, Link } from "react-router-dom";
 
-import ItemCollections from "./../../components/shop/itemCollections/ItemCollections";
+import Products from "./../../components/shop/products/Products";
 
 import DATA from "../../shared/data";
 import "./CollectionPage.scss";
@@ -42,7 +42,7 @@ const CollectionPage = () => {
 
       <div className="list">
         {items.map(item => (
-          <ItemCollections key={item.id} item={item} />
+          <Products key={item.id} item={item} />
         ))}
       </div>
     </div>

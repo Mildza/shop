@@ -7,12 +7,18 @@ import Shop from "./pages/Shop/Shop";
 import CollectionPage from "./pages/collection-page/CollectionPage";
 import LogIn from "./pages/login/LogIn";
 import Messages from "./components/mesages/Mesages";
+import Checkout from "./pages/checkout/Checkout";
 
-import { auth, createUserProfile } from "./firebase/firabase-util";
+import {
+  auth,
+  createUserProfile,
+  addCollectionAndDocuments
+} from "./firebase/firabase-util";
 import UserContext from "./shared/context/UserContext";
 import CartContext from "./shared/context/CartContext";
 import MessageContext from "./shared/context/MessageContext";
-import Checkout from "./pages/checkout/Checkout";
+import DATA from "./shared/data";
+
 import "./App.scss";
 
 import { cartChecker, cartCounter } from "./shared/utils/cartUtils";
@@ -101,6 +107,10 @@ function App() {
         });
       }
       setUser(user);
+      // addCollectionAndDocuments(
+      //   "collection",
+      //   DATA.map(({ title, items }) => ({ title, items }))
+      // );
     });
     return () => {
       unsubscribe();

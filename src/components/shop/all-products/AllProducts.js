@@ -2,22 +2,21 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import "./Collection.scss";
+import "./AllProducts.scss";
 
-import ItemCollections from "./../itemCollections/ItemCollections";
-import Category from "./../../homepage/category/Category";
+import Products from "./../products/Products";
 
-const scrollToCollection = id => {
-  const collection = document.getElementById(id);
-  window.scrollTo(0, collection.offsetTop);
+const scrollToProducts = id => {
+  const routeProducts = document.getElementById(id);
+  window.scrollTo(0, routeProducts.offsetTop);
 };
 
-const Collection = ({ items, title, routeName }) => {
+const AllProducts = ({ items, title, routeName }) => {
   const { id } = useParams();
 
   useEffect(() => {
     if (id) {
-      scrollToCollection(id);
+      scrollToProducts(id);
     }
   }, [id]);
 
@@ -28,15 +27,15 @@ const Collection = ({ items, title, routeName }) => {
         <h1>{title.toUpperCase()} ...</h1>
       </Link>
 
-      <div className="collection-row">
+      <div className="all-products-row">
         {items
           .filter((item, i) => i < 4)
           .map(item => (
-            <ItemCollections key={item.id} item={item} />
+            <Products key={item.id} item={item} />
           ))}
       </div>
     </div>
   );
 };
 
-export default Collection;
+export default AllProducts;
