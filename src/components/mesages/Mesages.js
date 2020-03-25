@@ -1,15 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
-import MessageContext from "../../shared/context/MessageContext";
-
+import { CartContext } from "../../providers/CartProvider";
 import "./Mesages.scss";
 
 const Mesages = () => {
-  const { message, setMsg } = useContext(MessageContext);
+  const { message, setMsg } = useContext(CartContext);
 
-  if (message.isMessage) {
-    setTimeout(() => setMsg(), 3000);
-  }
+  useEffect(() => {
+    const timer = () => setTimeout(() => setMsg(), 2000);
+    const timerId = timer();
+    return () => {
+      clearTimeout(timerId);
+    };
+  });
 
   return message.isMessage ? (
     message.status === "added" ? (

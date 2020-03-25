@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-import UserContext from "./../context/UserContext";
-import CartContext from "./../context/CartContext";
+import UserContext from "../../context/UserContext";
+import { CartContext } from "../../providers/CartProvider";
 import { auth } from "./../../firebase/firabase-util";
 
 import "./Header.scss";
@@ -11,7 +11,7 @@ import CardDropdown from "./../../components/card-dropdown/CardDropdown";
 
 const IMAGE_PATH = process.env.PUBLIC_URL + "/assets/images/";
 
-const Header = props => {
+const Header = () => {
   const { openCart, cartVisible } = useContext(CartContext);
   const { user, logHandler } = useContext(UserContext);
   const [toggle, setToggle] = useState(false);

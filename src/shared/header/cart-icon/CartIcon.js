@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import bag from "./bag.png";
 
 import "./CartIcon.scss";
-import CartContext from "./../../context/CartContext";
+import { CartContext } from "../../../providers/CartProvider";
 
 const CartIcon = props => {
   const { counter } = useContext(CartContext);

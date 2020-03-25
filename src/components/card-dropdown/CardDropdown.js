@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import Button from "./../../shared/button/Button";
-import CartContext from "./../../shared/context/CartContext";
+import { CartContext } from "../../providers/CartProvider";
 import CartItem from "../cart-item/CartItem";
 import "./CardDropdown.scss";
 

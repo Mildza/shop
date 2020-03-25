@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import CartContext from "./../../shared/context/CartContext";
+import { CartContext } from "../../providers/CartProvider";
 
 import "./CheckoutItem.scss";
 

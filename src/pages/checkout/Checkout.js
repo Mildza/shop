@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
-
-import CartContext from "./../../shared/context/CartContext";
+import { CartContext } from "../../providers/CartProvider";
 import CheckoutItem from "./../../components/checkout-item/CheckoutItem";
 import "./Checkout.scss";
 

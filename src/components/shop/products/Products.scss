@@ -1,5 +1,5 @@
 .products {
-  width: 100%;
+  width: 94%;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -41,7 +41,7 @@
 }
 
 @media (max-width: 1024px) {
-  .item-collection {
+  .products {
     width: 100%;
   }
 }

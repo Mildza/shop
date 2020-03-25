@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import "./Products.scss";
 import Button from "../../../shared/button/Button";
-import CartContext from "../../../shared/context/CartContext";
+import { CartContext } from "../../../providers/CartProvider";
 
 const Products = ({ item }) => {
   const { addItem } = useContext(CartContext);
